@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: bcrp
+    description: Datos crudos descargados de la API de series estadísticas del BCRP.
+    schema: raw
+    tables:
+      - name: tipo_cambio_bcrp
+        description: Tipo de cambio interbancario (S/ por US$) tal como llega de la API.
+        columns:
+          - name: periodo
+            description: Fecha en formato BCRP, ej. '02.Ene.20'.
+            data_tests: [not_null]

@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: stg_tipo_cambio
+    description: Tipo de cambio limpio, una fila por día hábil con dato.
+    columns:
+      - name: fecha
+        data_tests: [unique, not_null]
+      - name: tc_compra
+        data_tests: [not_null]
+      - name: tc_venta
+        data_tests: [not_null]
+
+  - name: fct_tipo_cambio_diario
+    description: Hechos diarios con spread, variación diaria y medias móviles.
+    columns:
+      - name: fecha
+        description: Día hábil.
+        data_tests: [unique, not_null]
+      - name: tc_venta
+        description: Tipo de cambio interbancario venta (S/ por US$).
+      - name: spread
+        description: Diferencia venta - compra.
+      - name: var_diaria_pct
+        description: Variación % respecto al día hábil anterior.
+      - name: media_movil_7d
+        description: Media móvil de 7 días hábiles del TC venta.
+      - name: media_movil_30d
+        description: Media móvil de 30 días hábiles del TC venta.
+
+  - name: fct_tipo_cambio_mensual
+    description: Resumen mensual (OHLC, promedio, volatilidad y variación).
+    columns:
+      - name: periodo
+        data_tests: [unique, not_null]
+
+  - name: fct_tipo_cambio_anual
+    description: Resumen anual del TC venta.
+    columns:
+      - name: anio
+        data_tests: [unique, not_null]

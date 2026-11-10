@@ -1,0 +1,7 @@
+tipo_cambio:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('DUCKDB_PATH', 'warehouse/tipo_cambio.duckdb') }}"
+      threads: 2
