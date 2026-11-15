@@ -6,7 +6,7 @@ publicado por el **Banco Central de Reserva del Perú (BCRP)**, lo transforma co
 
 ![Pipeline](https://github.com/JhonyVargas/pipeline-tipo-cambio-peru/actions/workflows/pipeline.yml/badge.svg)
 
-🔗 **Dashboard en vivo:** https://TU-APP.streamlit.app
+🔗 **Dashboard en vivo:** https://tipo-cambio-peru.streamlit.app
 
 ---
 
